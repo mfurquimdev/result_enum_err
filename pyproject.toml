@@ -1,0 +1,139 @@
+[project]
+name = "result_enum_err"
+version = "0.1.0"
+description = "Result with Enum describing the Err"
+authors = [{ name = "Mateus Furquim", email = "mfurquimdev@gmail.com" }]
+requires-python = ">=3.11,<3.12"
+readme = "README.md"
+license = { text = "MIT" }
+
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Education",
+]
+
+dependencies = ["result>=0.16.1"]
+
+[project.optional-dependencies]
+docs = [
+    "mkautodoc>=0.2.0",
+    "mkdocs-macros-plugin>=1.0.5",
+    "mkdocs-material>=9.5.4",
+    "mkdocs>=1.5.3",
+    "mkdocstrings[python]>=0.24.0",
+]
+dev = [
+    "black>=23.12.1",
+    "ipdb>=0.13.13",
+    "ipython>=8.22.2",
+    "isort>=5.13.2",
+    "pre-commit>=3.6.0",
+    "ruff>=0.1.14",
+]
+
+[tool.ruff]
+line-length = 100
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+target-version = "py311"
+
+# Enable by default.
+# See [Ruff Rules](https://beta.ruff.rs/docs/rules) for more information
+select = [
+    "A",   # [flake8-builtins](https://pypi.org/project/flake8-builtins/)
+    "B",   # [flake8-bugbear](https://pypi.org/project/flake8-bugbear/)
+    "F",   # [pyflake](https://pypi.org/project/pyflakes/)
+    "W",   # [pycodestyle](https://pypi.org/project/pycodestyle/)
+    "UP",  # [pyupgrade](https://pypi.org/project/pyupgrade/)
+    "PTH", # [flake8-use-pathlib](https://pypi.org/project/flake8-use-pathlib/)
+    # "ARG",  # [flake8-unused-arguments](https://pypi.org/project/flake8-unused-arguments/)
+    # "BLE",  # [flake8-blind-except](https://pypi.org/project/flake8-blind-except/)
+    # "C4",   # [flake8-comprehensions](https://pypi.org/project/flake8-comprehensions/)
+    # "C90",  # [mccabe complexity](https://pypi.org/project/mccabe/)
+    # "COM",  # [flake8-commas](https://pypi.org/project/flake8-commas/)
+    # "D",    # [pydocstyle](https://pypi.org/project/pydocstyle/)
+    # "DTZ",  # [flake8-datetimez](https://pypi.org/project/flake8-datetimez/)
+    # "E",    # [pycodestyle](https://pypi.org/project/pycodestyle/)
+    # "EM",   # [flake8-errmsg](https://pypi.org/project/flake8-errmsg/)
+    # "ERA",  # [eradicate](https://pypi.org/project/eradicate/)
+    # "FBT",  # [flake8-boolean-trap](https://pypi.org/project/flake8-boolean-trap/)
+    # "FLY",  # [flynt](https://pypi.org/project/flynt/)
+    # "ICN",  # [flake8-import-conventions](https://github.com/joaopalmeiro/flake8-import-conventions)
+    # "ISC",  # [flake8-implicit-str-concat](https://pypi.org/project/flake8-implicit-str-concat/)
+    # "N",    # [pep8-naming](https://pypi.org/project/pep8-naming/)
+    # "NPY",  # [NumPy-specific rules](https://beta.ruff.rs/docs/rules/#numpy-specific-rules-npy)
+    # "PD",   # [pandas-vet](https://pypi.org/project/pandas-vet/)
+    # "PERF", # [Perflint](https://pypi.org/project/perflint/)
+    # "PIE",  # [flake8-pie](https://pypi.org/project/flake8-pie/)
+    # "PT",   # [flake8-pytest-style](https://pypi.org/project/flake8-pytest-style/)
+    # "PYI",  # [flake8-pyi](https://pypi.org/project/flake8-pyi/)
+    # "Q",    # [flake8-quotes](https://pypi.org/project/flake8-quotes/)
+    # "RET",  # [flake8-return](https://pypi.org/project/flake8-return/)
+    # "RSE",  # [flake8-raise](https://pypi.org/project/flake8-raise/)
+    # "RUF",  # [Ruff-specific rules](https://beta.ruff.rs/docs/rules/#ruff-specific-rules-ruf)
+    # "S",    # [flake8-bandit](https://pypi.org/project/flake8-bandit/)
+    # "SIM",  # [flake8-simplify](https://pypi.org/project/flake8-simplify/)
+    # "SLF",  # [flake8-self](https://pypi.org/project/flake8-self/)
+    # "SLOT", # [flake8-slots](https://pypi.org/project/flake8-slots/)
+    # "T10",  # [flake8-debugger](https://pypi.org/project/flake8-debugger/)
+    # "T20",  # [flake8-print](https://pypi.org/project/flake8-print/)
+    # "TD",   # [flake8-todos](https://github.com/orsinium-labs/flake8-todos/)
+    # "TID",  # [flake8-tidy-imports](https://pypi.org/project/flake8-tidy-imports/)
+    # "TRY",  # [tryceratops](https://pypi.org/project/tryceratops/)
+]
+
+extend-ignore = [
+    "D203",
+    "D204",
+    "D213",
+    "D215",
+    "D400",
+    "D404",
+    "D406",
+    "D407",
+    "D408",
+    "D409",
+    "D413",
+    "UP007",
+]
+
+# Exclude a variety of commonly ignored directories.
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+]
+
+# Ignore `E402` (import violations) in all `__init__.py` files
+[tool.ruff.per-file-ignores]
+"__init__.py" = ["E402", "I001", "F401"]
+
+[tool.ruff.isort]
+force-single-line = true
+
+[tool.isort]
+py_version = 3
+profile = "black"
+force_single_line = true
+line_length = 100
+
+[tool.black]
+line-length = 100
